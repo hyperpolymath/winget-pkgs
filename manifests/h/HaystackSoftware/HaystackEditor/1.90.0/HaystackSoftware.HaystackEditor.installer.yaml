@@ -151,7 +151,7 @@ FileExtensions:
 - zsh
 Installers:
 - Architecture: x64
-  InstallerUrl: https://d2dv27o1k99orf.cloudfront.net/windows-installer/HaystackEditorSetup-0.20.1.exe
-  InstallerSha256: 5857DC0DF2B9CC9EF7FBA685B610B785885F794D24DF2878F484652478F97916
+  InstallerUrl: https://d2dv27o1k99orf.cloudfront.net/windows-installer/HaystackEditorSetup-0.20.3.exe
+  InstallerSha256: 970B13325CF73BE7131F94585126362381AD61DD340221452FD9E205CC1D9F69
 ManifestType: installer
 ManifestVersion: 1.9.0
