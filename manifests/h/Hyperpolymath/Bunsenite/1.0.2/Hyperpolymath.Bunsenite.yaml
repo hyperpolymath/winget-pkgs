@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.6.0.schema.json
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.10.0.schema.json
 
 PackageIdentifier: Hyperpolymath.Bunsenite
 PackageVersion: 1.0.2
@@ -8,14 +8,13 @@ PublisherUrl: https://github.com/hyperpolymath
 PublisherSupportUrl: https://github.com/hyperpolymath/bunsenite/issues
 PackageName: Bunsenite
 PackageUrl: https://github.com/hyperpolymath/bunsenite
-License: MIT OR Palimpsest-0.8
+License: MIT
 LicenseUrl: https://github.com/hyperpolymath/bunsenite/blob/main/LICENSE.txt
 ShortDescription: Nickel configuration file parser with multi-language FFI bindings
-Description: |
+Description: |-
   Bunsenite is a Nickel configuration file parser with multi-language FFI bindings.
   It provides a Rust core library with a stable C ABI layer (via Zig) that enables
   bindings for Deno (JavaScript/TypeScript), Rescript, and WebAssembly.
-
   Features:
   - Type Safety: Compile-time guarantees via Rust's type system
   - Memory Safety: Rust ownership model, zero unsafe blocks
@@ -43,4 +42,4 @@ Installers:
       - RelativeFilePath: bunsenite.exe
         PortableCommandAlias: bunsenite
 ManifestType: singleton
-ManifestVersion: 1.6.0
+ManifestVersion: 1.10.0
