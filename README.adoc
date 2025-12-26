@@ -1,0 +1,118 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2024 hyperpolymath
+
+= Hyperpolymath WinGet Packages
+:toc:
+:toclevels: 2
+
+== Overview
+
+Personal fork of https://github.com/microsoft/winget-pkgs[microsoft/winget-pkgs] for submitting Hyperpolymath packages to the Windows Package Manager.
+
+== Published Packages
+
+[cols="1,1,2,1"]
+|===
+|Package |Version |Description |Status
+
+|`Hyperpolymath.Bunsenite`
+|1.0.2
+|Nickel configuration file parser with FFI bindings (Rust/Deno/ReScript/WASM)
+|Submitted
+|===
+
+=== Installing
+
+[source,powershell]
+----
+winget install Hyperpolymath.Bunsenite
+----
+
+== Bunsenite
+
+=== Description
+
+Bunsenite is a Nickel configuration file parser providing:
+
+* **Rust core library** with stable C ABI (via Zig)
+* **Multi-language FFI bindings**: Deno, ReScript, WebAssembly
+* **Type safety** via Rust's type system
+* **Memory safety** with zero unsafe blocks
+* **Offline-first** operation (air-gapped compatible)
+
+=== Source Repository
+
+https://github.com/hyperpolymath/bunsenite
+
+=== License
+
+MIT
+
+== Roadmap
+
+=== Phase 1: Initial Submission (Current)
+* [x] Create Bunsenite v1.0.2 manifest
+* [x] Update manifest to schema v1.10.0
+* [ ] PR accepted to upstream microsoft/winget-pkgs
+
+=== Phase 2: Ongoing Maintenance
+* [ ] Update manifests when new Bunsenite versions release
+* [ ] Add ARM64 installer when available
+* [ ] Add additional Hyperpolymath packages as they become Windows-compatible
+
+=== Future Packages (Candidates)
+|===
+|Package |Description |Blocked On
+
+|Other Hyperpolymath tools
+|TBD
+|Windows builds
+|===
+
+== Development Standards
+
+This fork follows the **Hyperpolymath Standard** language policy (see `.claude/CLAUDE.md`):
+
+* **Allowed**: ReScript, Deno, Rust, Tauri 2.0+, Dioxus, Gleam, Bash
+* **Banned**: TypeScript, Node.js, Go, Python (except SaltStack)
+* **Package Management**: Guix primary, Nix fallback, Deno for JS deps
+
+== Workflow
+
+=== Adding a New Package Version
+
+[source,bash]
+----
+# 1. Sync fork with upstream
+git fetch upstream
+git merge upstream/main
+
+# 2. Create manifest (use Microsoft's tool)
+cd Tools
+pwsh ./YamlCreate.ps1
+
+# 3. Commit and push
+git add manifests/h/Hyperpolymath/...
+git commit -m "New version: Hyperpolymath.PackageName version X.Y.Z"
+git push origin main
+
+# 4. Create PR to microsoft/winget-pkgs
+----
+
+=== Manifest Location
+
+----
+manifests/
+└── h/
+    └── Hyperpolymath/
+        └── PackageName/
+            └── X.Y.Z/
+                └── Hyperpolymath.PackageName.yaml
+----
+
+== Links
+
+* https://github.com/microsoft/winget-pkgs[Upstream: microsoft/winget-pkgs]
+* https://github.com/microsoft/winget-cli[WinGet CLI]
+* https://github.com/hyperpolymath/bunsenite[Bunsenite Source]
+* https://learn.microsoft.com/windows/package-manager/[WinGet Documentation]
